@@ -28,7 +28,10 @@ void testDetectLoop() {
     int pos = 3;
     Node* head = initLoopedLinkedListFromArray(arr, count, pos);
     bool re = detectLoop(head);
-    std::cout << "looped: " << re;
+    std::cout << "is looped: " << re;
+    Node* head2 = initLinkedListFromArray(arr, count);
+    bool re2 = detectLoop(head2);
+    std::cout << "not looped: " << re2;
 }
 
 void testGetNthFromLast() {
