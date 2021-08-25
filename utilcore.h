@@ -4,8 +4,10 @@
 #include<iostream>
 
 struct Node;
-Node *initLinkedList(int the_aray[], int arr_count);
+Node *initLinkedListFromArray(int the_aray[], int arr_count);
+Node *initLoopedLinkedListFromArray(int the_aray[], int arr_count, int pos);
 int getNthFromLast(Node *head, int n);
 void printList(Node* node);
+bool detectLoop(Node *head);
 
 #endif
