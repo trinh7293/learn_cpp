@@ -1,7 +1,4 @@
 #include "helper.h"
-#include <stdio.h>
-#include<iostream>
-using namespace std;
 
 /* Link list Node */
 struct Node {
@@ -29,10 +26,10 @@ Node *initLinkedList(int the_aray[], int arr_count) {
 void printList(Node* node) 
 { 
     while (node != NULL) { 
-        cout << node->data <<" ";
+        std::cout << node->data <<" ";
         node = node->next;
   }  
-  cout<<"\n";
+  std::cout<<"\n";
 }
 
 //Function to find the data of nth node from the end of a linked list.
