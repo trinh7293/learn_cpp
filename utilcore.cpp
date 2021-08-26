@@ -1,17 +1,5 @@
 #include "utilcore.h"
 
-/* Link list Node */
-struct Node
-{
-    int data;
-    struct Node *next;
-    Node(int x)
-    {
-        data = x;
-        next = NULL;
-    }
-};
-
 Node *initLinkedListFromArray(int the_aray[], int arr_count)
 {
     if (arr_count < 1)
@@ -25,6 +13,7 @@ Node *initLinkedListFromArray(int the_aray[], int arr_count)
         tail->next = new Node(the_aray[i]);
         tail = tail->next;
     }
+    tail->next = NULL;
     return head;
 }
 
@@ -83,21 +72,24 @@ int getNthFromLast(Node *head, int n)
     return current->data;
 }
 
-int getMiddle(Node *head)
+Node *getMiddleNode(Node *head)
 {
-   if (head == NULL) {
-       return -1;
-   }
-   Node* slow = head;
-   Node* fast = head;
-   while (fast-> next != NULL) {
-       if (fast->next->next == NULL) {
-           return slow->next->data;
-       }
-       fast = fast->next->next;
-       slow = slow->next;
-   }
-   return slow->data;
+    if (head == NULL)
+    {
+        return head;
+    }
+    Node *slow = head;
+    Node *fast = head;
+    while (fast->next != NULL)
+    {
+        if (fast->next->next == NULL)
+        {
+            return slow->next;
+        }
+        fast = fast->next->next;
+        slow = slow->next;
+    }
+    return slow;
 }
 
 bool detectLoop(Node *head)
@@ -127,14 +119,18 @@ int countNodesinLoop(struct Node *head)
     {
         fast = fast->next->next;
         slow = slow->next;
-        if (inLoop) {
-            count ++;
+        if (inLoop)
+        {
+            count++;
         }
         if (fast == slow)
         {
-            if (inLoop){
+            if (inLoop)
+            {
                 return count;
-            } else {
+            }
+            else
+            {
                 inLoop = true;
             }
         }
@@ -142,13 +138,16 @@ int countNodesinLoop(struct Node *head)
     return 0;
 }
 
-Node* reverseLinkedList(Node* head) {
-    Node* previous = NULL;
-    Node* current = head;
-    Node* next = head->next;
-    while(current != NULL) {
+Node *reverseLinkedList(Node *head)
+{
+    Node *previous = NULL;
+    Node *current = head;
+    Node *next = head->next;
+    while (current != NULL)
+    {
         current->next = previous;
-        if (next == NULL) {
+        if (next == NULL)
+        {
             break;
         }
         previous = current;
