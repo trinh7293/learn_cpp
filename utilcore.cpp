@@ -83,6 +83,23 @@ int getNthFromLast(Node *head, int n)
     return current->data;
 }
 
+int getMiddle(Node *head)
+{
+   if (head == NULL) {
+       return -1;
+   }
+   Node* slow = head;
+   Node* fast = head;
+   while (fast-> next != NULL) {
+       if (fast->next->next == NULL) {
+           return slow->next->data;
+       }
+       fast = fast->next->next;
+       slow = slow->next;
+   }
+   return slow->data;
+}
+
 bool detectLoop(Node *head)
 {
     Node *fast = head;
@@ -97,4 +114,30 @@ bool detectLoop(Node *head)
         }
     }
     return false;
+}
+
+//Function to find the length of a loop in the linked list.
+int countNodesinLoop(struct Node *head)
+{
+    Node *fast = head;
+    Node *slow = head;
+    bool inLoop = false;
+    int count = 0;
+    while (fast != NULL && fast->next != NULL)
+    {
+        fast = fast->next->next;
+        slow = slow->next;
+        if (inLoop) {
+            count ++;
+        }
+        if (fast == slow)
+        {
+            if (inLoop){
+                return count;
+            } else {
+                inLoop = true;
+            }
+        }
+    }
+    return 0;
 }
