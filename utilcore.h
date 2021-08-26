@@ -23,5 +23,7 @@ Node *getMiddleNode(Node *head);
 bool detectLoop(Node *head);
 int countNodesinLoop(struct Node *head);
 Node *reverseLinkedList(Node *head);
+bool checkSameLinkedListFirstElements(Node *head1, Node *head2);
+bool checkPalindrome(Node *head);
 
 #endif

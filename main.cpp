@@ -2,6 +2,7 @@
 // C program to find n'th Node in linked list
 #include "utilcore.h"
 
+void testSameLL();
 void testGetNthFromLast();
 Node *initNormalLinkedList();
 void testDetectLoop();
@@ -13,8 +14,9 @@ void testReverseLinkedList();
 /* Driver program to test above function*/
 int main()
 {
+    testSameLL();
     // testReverseLinkedList();
-    testGetMid();
+    // testGetMid();
     // testCountLoop();
     // testDetectLoop();
     // testInitLoopedLinkedListFromArray();
@@ -27,6 +29,19 @@ Node *initNormalLinkedList()
     const int count = 6;
     int arr[count] = {1, 2, 3, 4, 5, 6};
     return initLinkedListFromArray(arr, count);
+}
+
+void testSameLL()
+{
+    const int size1 = 5, size2 = 7;
+    int arr1[size1] = {1, 2, 3, 4, 5};
+    int arr2[size2] = {1, 2, 3, 4, 3, 6, 7};
+    Node *head1 = initLinkedListFromArray(arr1, size1);
+    Node *head2 = initLinkedListFromArray(arr2, size2);
+    bool re = checkSameLinkedListFirstElements(head1, head2);
+    printList(head1);
+    printList(head2);
+    std::cout << "the 2 linked list is same first: " << re;
 }
 
 void testReverseLinkedList()
