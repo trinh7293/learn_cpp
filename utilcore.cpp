@@ -141,3 +141,19 @@ int countNodesinLoop(struct Node *head)
     }
     return 0;
 }
+
+Node* reverseLinkedList(Node* head) {
+    Node* previous = NULL;
+    Node* current = head;
+    Node* next = head->next;
+    while(current != NULL) {
+        current->next = previous;
+        if (next == NULL) {
+            break;
+        }
+        previous = current;
+        current = next;
+        next = next->next;
+    }
+    return current;
+}

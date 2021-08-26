@@ -11,5 +11,6 @@ int getNthFromLast(Node *head, int n);
 int getMiddle(Node *head);
 bool detectLoop(Node *head);
 int countNodesinLoop(struct Node *head);
+Node* reverseLinkedList(Node* head);
 
 #endif

@@ -7,12 +7,14 @@ Node* initNormalLinkedList();
 void testDetectLoop();
 void testCountLoop();
 void testGetMid();
+void testReverseLinkedList();
 // void testInitLoopedLinkedListFromArray();
 
 /* Driver program to test above function*/
 int main()
 {
-    testGetMid();
+    testReverseLinkedList();
+    // testGetMid();
     // testCountLoop();
     // testDetectLoop();
     // testInitLoopedLinkedListFromArray();
@@ -24,6 +26,13 @@ Node* initNormalLinkedList() {
     int count = 6;
     int arr[count] = {1, 2, 3, 4, 5, 6};
     return initLinkedListFromArray(arr, count);
+}
+
+void testReverseLinkedList() {
+    Node* head = initNormalLinkedList();
+    printList(head);
+    Node* head2 = reverseLinkedList(head);
+    printList(head2);
 }
 
 void testGetMid() {
