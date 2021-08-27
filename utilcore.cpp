@@ -157,6 +157,20 @@ Node *reverseLinkedList(Node *head)
     return current;
 }
 
+// Node* createReverseLinkedList(Node *head)
+// {
+//     Node* current = head;
+//     Node* new_head = new Node(head->data);
+//     new_head->next = NULL;
+//     while(current != NULL) {
+//         current = current->next;
+//         Node* new_node = new Node(current->data);
+//         new_node->next = new_head;
+//         new_head = new_node;
+//     }
+//     return new_head;
+// }
+
 bool checkSameLinkedListFirstElements(Node *head1, Node *head2)
 {
     Node *curr1 = head1;
@@ -176,6 +190,8 @@ bool checkSameLinkedListFirstElements(Node *head1, Node *head2)
 bool checkPalindrome(Node *head)
 {
     Node *head2 = getMiddleNode(head);
-    head2 = reverseLinkedList(head2);
-    return checkSameLinkedListFirstElements(head, head2);
+    Node *head3 = reverseLinkedList(head2);
+    bool re = checkSameLinkedListFirstElements(head, head3);
+    reverseLinkedList(head3);
+    return re;
 }

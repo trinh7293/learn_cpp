@@ -2,6 +2,7 @@
 // C program to find n'th Node in linked list
 #include "utilcore.h"
 
+void testCheckPalin();
 void testSameLL();
 void testGetNthFromLast();
 Node *initNormalLinkedList();
@@ -14,7 +15,8 @@ void testReverseLinkedList();
 /* Driver program to test above function*/
 int main()
 {
-    testSameLL();
+    testCheckPalin();
+    // testSameLL();
     // testReverseLinkedList();
     // testGetMid();
     // testCountLoop();
@@ -29,6 +31,23 @@ Node *initNormalLinkedList()
     const int count = 6;
     int arr[count] = {1, 2, 3, 4, 5, 6};
     return initLinkedListFromArray(arr, count);
+}
+
+void testCheckPalin() {
+    const int count = 7;
+    int arr[count] = {1, 2, 3, 4, 5, 6, 7};
+    Node* head = initLinkedListFromArray(arr, count);
+    bool re = checkPalindrome(head);
+    printList(head);
+    // printList(head);
+    std::cout << "the linked list is palindrome: " << re << '\n';
+    const int count2 = 7;
+    int arr2[count2] = {1, 2, 3, 4, 3, 2, 1};
+    Node* head2 = initLinkedListFromArray(arr2, count2);
+    bool re2 = checkPalindrome(head2);
+    printList(head2);
+    // printList(head);
+    std::cout << "the linked list is palindrome: " << re2;
 }
 
 void testSameLL()
@@ -47,9 +66,9 @@ void testSameLL()
 void testReverseLinkedList()
 {
     Node *head = initNormalLinkedList();
+    Node* head2 = reverseLinkedList(head);
+    reverseLinkedList(head2);
     printList(head);
-    Node *head2 = reverseLinkedList(head);
-    printList(head2);
 }
 
 void testGetMid()
