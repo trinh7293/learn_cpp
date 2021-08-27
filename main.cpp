@@ -10,12 +10,14 @@ void testDetectLoop();
 void testCountLoop();
 void testGetMid();
 void testReverseLinkedList();
+void testRemoveDuplicatesSorted();
 // void testInitLoopedLinkedListFromArray();
 
 /* Driver program to test above function*/
 int main()
 {
-    testCheckPalin();
+    testRemoveDuplicatesSorted();
+    // testCheckPalin();
     // testSameLL();
     // testReverseLinkedList();
     // testGetMid();
@@ -33,17 +35,28 @@ Node *initNormalLinkedList()
     return initLinkedListFromArray(arr, count);
 }
 
-void testCheckPalin() {
+void testRemoveDuplicatesSorted()
+{
+    const int count = 9;
+    int arr[count] = {1, 3, 3, 3, 3, 5, 7, 7, 7};
+    Node *head = initLinkedListFromArray(arr, count);
+    printList(head);
+    Node *re = removeDuplicatesSorted(head);
+    printList(re);
+}
+
+void testCheckPalin()
+{
     const int count = 7;
     int arr[count] = {1, 2, 3, 4, 5, 6, 7};
-    Node* head = initLinkedListFromArray(arr, count);
+    Node *head = initLinkedListFromArray(arr, count);
     bool re = checkPalindrome(head);
     printList(head);
     // printList(head);
     cout << "the linked list is palindrome: " << re << '\n';
     const int count2 = 7;
     int arr2[count2] = {1, 2, 3, 4, 3, 2, 1};
-    Node* head2 = initLinkedListFromArray(arr2, count2);
+    Node *head2 = initLinkedListFromArray(arr2, count2);
     bool re2 = checkPalindrome(head2);
     printList(head2);
     // printList(head);
@@ -66,7 +79,7 @@ void testSameLL()
 void testReverseLinkedList()
 {
     Node *head = initNormalLinkedList();
-    Node* head2 = reverseLinkedList(head);
+    Node *head2 = reverseLinkedList(head);
     reverseLinkedList(head2);
     printList(head);
 }

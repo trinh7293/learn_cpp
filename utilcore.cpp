@@ -208,3 +208,23 @@ bool checkPalindrome(Node *head)
     }
     return true;
 }
+
+Node *removeDuplicatesSorted(Node *head)
+{
+    Node *curr = head;
+    Node *next_next;
+    while (curr->next != NULL)
+    {
+        if (curr->data == curr->next->data)
+        {
+            next_next = curr->next->next;
+            free(curr->next);
+            curr->next = next_next;
+        }
+        else
+        {
+            curr = curr->next;
+        }
+    }
+    return head;
+}
