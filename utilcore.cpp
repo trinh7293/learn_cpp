@@ -189,9 +189,22 @@ bool checkSameLinkedListFirstElements(Node *head1, Node *head2)
 
 bool checkPalindrome(Node *head)
 {
-    Node *head2 = getMiddleNode(head);
-    Node *head3 = reverseLinkedList(head2);
-    bool re = checkSameLinkedListFirstElements(head, head3);
-    reverseLinkedList(head3);
-    return re;
+    std::stack<int> s;
+    Node *curr = head;
+    while (curr != NULL)
+    {
+        s.push(curr->data);
+        curr = curr->next;
+    }
+    while (head != NULL)
+    {
+        int i = s.top();
+        s.pop();
+        if (head->data != i)
+        {
+            return false;
+        }
+        head = head->next;
+    }
+    return true;
 }
