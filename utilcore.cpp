@@ -43,10 +43,10 @@ void printList(Node *node)
 {
     while (node != NULL)
     {
-        std::cout << node->data << " ";
+        cout << node->data << " ";
         node = node->next;
     }
-    std::cout << "\n";
+    cout << "\n";
 }
 
 //Function to find the data of nth node from the end of a linked list.
@@ -189,7 +189,7 @@ bool checkSameLinkedListFirstElements(Node *head1, Node *head2)
 
 bool checkPalindrome(Node *head)
 {
-    std::stack<int> s;
+    stack<int> s;
     Node *curr = head;
     while (curr != NULL)
     {

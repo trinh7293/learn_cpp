@@ -40,14 +40,14 @@ void testCheckPalin() {
     bool re = checkPalindrome(head);
     printList(head);
     // printList(head);
-    std::cout << "the linked list is palindrome: " << re << '\n';
+    cout << "the linked list is palindrome: " << re << '\n';
     const int count2 = 7;
     int arr2[count2] = {1, 2, 3, 4, 3, 2, 1};
     Node* head2 = initLinkedListFromArray(arr2, count2);
     bool re2 = checkPalindrome(head2);
     printList(head2);
     // printList(head);
-    std::cout << "the linked list is palindrome: " << re2;
+    cout << "the linked list is palindrome: " << re2;
 }
 
 void testSameLL()
@@ -60,7 +60,7 @@ void testSameLL()
     bool re = checkSameLinkedListFirstElements(head1, head2);
     printList(head1);
     printList(head2);
-    std::cout << "the 2 linked list is same first: " << re;
+    cout << "the 2 linked list is same first: " << re;
 }
 
 void testReverseLinkedList()
@@ -78,7 +78,7 @@ void testGetMid()
     Node *head = initLinkedListFromArray(arr, count);
     Node *mid = getMiddleNode(head);
     printList(head);
-    std::cout << "Middle is: " << mid->data;
+    cout << "Middle is: " << mid->data;
 }
 
 void testCountLoop()
@@ -88,10 +88,10 @@ void testCountLoop()
     int pos = 1;
     Node *head = initLoopedLinkedListFromArray(arr, count, pos);
     int re = countNodesinLoop(head);
-    std::cout << "count Node: " << re;
+    cout << "count Node: " << re;
     Node *head2 = initLinkedListFromArray(arr, count);
     int re2 = countNodesinLoop(head2);
-    std::cout << "count Node: " << re2;
+    cout << "count Node: " << re2;
 }
 
 void testDetectLoop()
@@ -101,10 +101,10 @@ void testDetectLoop()
     int pos = 3;
     Node *head = initLoopedLinkedListFromArray(arr, count, pos);
     bool re = detectLoop(head);
-    std::cout << "is looped: " << re;
+    cout << "is looped: " << re;
     Node *head2 = initLinkedListFromArray(arr, count);
     bool re2 = detectLoop(head2);
-    std::cout << "not looped: " << re2;
+    cout << "not looped: " << re2;
 }
 
 void testGetNthFromLast()
@@ -113,7 +113,7 @@ void testGetNthFromLast()
     int nth = 1;
     int result = getNthFromLast(head, nth);
     printList(head);
-    std::cout << "the " << nth << "th from last: " << result << '\n';
+    cout << "the " << nth << "th from last: " << result << '\n';
 }
 
 void testInitLoopedLinkedListFromArray()

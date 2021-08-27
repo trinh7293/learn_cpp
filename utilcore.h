@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stack>
+using namespace std;
 /* Link list Node */
 class Node
 {
