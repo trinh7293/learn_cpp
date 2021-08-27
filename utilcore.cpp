@@ -228,3 +228,26 @@ Node *removeDuplicatesSorted(Node *head)
     }
     return head;
 }
+
+Node *removeDuplicates(Node *head)
+{
+    Node *curr = head;
+    Node *next_next;
+    unordered_set<int> newSet = {head->data};
+    while (curr->next != NULL)
+    {
+        int nextData = curr->next->data;
+        if (newSet.count(nextData))
+        {
+            next_next = curr->next->next;
+            free(curr->next);
+            curr->next = next_next;
+        }
+        else
+        {
+            newSet.insert(nextData);
+            curr = curr->next;
+        }
+    }
+    return head;
+}

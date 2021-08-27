@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stack>
+#include <unordered_set>
 using namespace std;
 /* Link list Node */
 class Node
@@ -27,5 +28,6 @@ Node *reverseLinkedList(Node *head);
 bool checkSameLinkedListFirstElements(Node *head1, Node *head2);
 bool checkPalindrome(Node *head);
 Node *removeDuplicatesSorted(Node *head);
+Node *removeDuplicates(Node *head);
 
 #endif

@@ -11,12 +11,14 @@ void testCountLoop();
 void testGetMid();
 void testReverseLinkedList();
 void testRemoveDuplicatesSorted();
+void testRemoveDuplicates();
 // void testInitLoopedLinkedListFromArray();
 
 /* Driver program to test above function*/
 int main()
 {
-    testRemoveDuplicatesSorted();
+    testRemoveDuplicates();
+    // testRemoveDuplicatesSorted();
     // testCheckPalin();
     // testSameLL();
     // testReverseLinkedList();
@@ -33,6 +35,16 @@ Node *initNormalLinkedList()
     const int count = 6;
     int arr[count] = {1, 2, 3, 4, 5, 6};
     return initLinkedListFromArray(arr, count);
+}
+
+void testRemoveDuplicates()
+{
+    const int count = 7;
+    int arr[count] = {1, 7, 3, 5, 3, 5, 7};
+    Node *head = initLinkedListFromArray(arr, count);
+    printList(head);
+    Node *re = removeDuplicates(head);
+    printList(re);
 }
 
 void testRemoveDuplicatesSorted()
