@@ -237,7 +237,7 @@ Node *removeDuplicates(Node *head)
     while (curr->next != NULL)
     {
         int nextData = curr->next->data;
-        if (newSet.count(nextData))
+        if (newSet.find(nextData) != newSet.end())
         {
             next_next = curr->next->next;
             free(curr->next);
